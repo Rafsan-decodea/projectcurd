@@ -31,4 +31,9 @@ class HomeController extends Controller
         $student->save();
         return redirect(route('home'))->with('successMsg','data_update_seccess');
     }
+    public function edit($id)
+    {
+        $data['student_id'] = student::find($id);
+        return view('pages.edit',$data);
+    }
 }
