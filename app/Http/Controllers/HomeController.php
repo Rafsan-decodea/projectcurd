@@ -7,8 +7,9 @@ use App\student;
 class HomeController extends Controller
 {
     public function index()
-    {
-        return view('pages.welcome');
+    { 
+        $data['student'] = student::all();
+        return view('pages.welcome',$data);
     }
     public function create()
     {

@@ -14,3 +14,4 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('create/','HomeController@create')->name('create');
 Route::post('create/','HomeController@store')->name('store');
+Route::get('edit/{id}','HomeController@edit')->name('edit');

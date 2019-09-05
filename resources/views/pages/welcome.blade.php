@@ -16,6 +16,30 @@
         </div>
      @endif   
 </div>
-         
+ <table class="table table-striped table-hover ">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Roll</th>
+    <th>Class</th>
+    <th>Email</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  @foreach ($student as $item)
+  <tr>
+    
+       <td>{{ $item->id}}</td>
+       <td>{{ $item->name }}</td>
+       <td>{{ $item->roll }}</td>
+       <td>{{ $item->class }}</td>
+       <td>{{ $item->email }}</td>
+       <td><a  class="btn btn-raised btn-primary btn-sm" href="">Edit</a> ||<a class="btn btn-raised btn-danger btn-sm"  href="">Delete</a></td>
+  </tr>
+ @endforeach  
+  </tbody>
+</table>        
 
 @endsection
