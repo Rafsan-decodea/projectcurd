@@ -36,7 +36,7 @@
        <td>{{ $item->roll }}</td>
        <td>{{ $item->class }}</td>
        <td>{{ $item->email }}</td>
-       <td><a  class="btn btn-raised btn-primary btn-sm" href="{{ route('edit'),$student_id->id }}">Edit</a> ||<a class="btn btn-raised btn-danger btn-sm"  href="">Delete</a></td>
+       <td><a  class="btn btn-raised btn-primary btn-sm" href="{{ route('edit',$item->id) }}">Edit</a> ||<a class="btn btn-raised btn-danger btn-sm"  href="{{ route('delete',$item->id) }}">Delete</a></td>
   </tr>
  @endforeach  
   </tbody>

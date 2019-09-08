@@ -14,12 +14,15 @@
           <h3 class="panel-title">Add New Student</h3>
        </div>
        <div class="panel-body">
-            <form action="{{ route('store') }}" method="POST">
+        @foreach ($student as $item)
+            <form action="{{ route('update',$item->id ) }}" method="POST">
             {{ csrf_field() }}
-                Name :<input name="name"/><br>
-                Roll :<input name="roll"/><br>
-                Class:<input name="class"><br>
-                Email:<input name="email"><br>
+            
+                Name :<input value="{{ $item->name }}" name="name"/><br>
+                Roll :<input value="{{ $item->roll }}" name="roll"/><br>
+                Class:<input value="{{ $item->class }}" name="class"><br>
+                Email:<input value="{{ $item->email }}"name="email"><br>
+            @endforeach    
                 <input type="submit" value="submit"/><br>
                 @foreach ($errors->all() as $error )
                     {{ $error }}<br>

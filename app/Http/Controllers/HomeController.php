@@ -34,6 +34,31 @@ class HomeController extends Controller
     public function edit($id)
     {
         $data['student_id'] = student::find($id);
+        $data['student'] = student::all();
+
         return view('pages.edit',$data);
+    }
+    public function update(Request $request ,$id )
+    {
+          $this->validate($request,[
+            'name' =>'required',
+            'roll' => 'required',
+            'class' =>'required',
+            'email' =>'required',
+        ]);
+        $student = student::find($id);
+        $student->name =$request->name;
+        $student->roll=$request->roll;
+        $student->class=$request->email;
+        $student->email=$request->email;
+        $student->save();
+        return redirect(route('home'))->with('successMsg','data_update_seccess');
+
+    }
+    public function delete($id)
+    {
+        student::find($id)->delete();
+        return redirect(route('home'))->with('successMsg','data_Delete_seccess');
+
     }
 }

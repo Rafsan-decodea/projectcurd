@@ -15,3 +15,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('create/','HomeController@create')->name('create');
 Route::post('create/','HomeController@store')->name('store');
 Route::get('edit/{id}','HomeController@edit')->name('edit');
+Route::post('update/{id}','HomeController@update')->name('update');
+Route::delete('delete/{id}','HomeController@delete')->name('delete');
+
+
